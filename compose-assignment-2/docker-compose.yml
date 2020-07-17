@@ -19,7 +19,7 @@ services:
     image: postgres:12.1
     environment:
       - POSTGRES_PASSWORD=Priya@210998
-    volume:
+    volumes:
       - drupal-data:/var/lib/postgresql/data
 
 volumes:
