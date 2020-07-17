@@ -9,6 +9,11 @@ services:
     image: custom-drupal
     ports:
       - '8080:80'
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles       
+      - drupal-sites:/var/www/html/sites      
+      - drupal-themes:/var/www/html/themes
 
   postgres:
     image: postgres:12.1
@@ -16,3 +21,10 @@ services:
       - POSTGRES_PASSWORD=Priya@210998
     volume:
       - drupal-data:/var/lib/postgresql/data
+
+volumes:
+  drupal-data:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
